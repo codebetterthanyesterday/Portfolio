@@ -1,0 +1,236 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.typed-cursor {
+  @apply text-pink-400 dark:text-sky-200;
+}
+
+html,
+body {
+  @apply m-0 h-full p-0;
+}
+
+#contact {
+  background: url("../../source/img/pikwizard-pink-petal-flower.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.wrapper_ {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(2px);
+  @apply dark:bg-slate-700/50;
+}
+
+#container {
+  @apply relative min-h-full;
+}
+
+#footer {
+  @apply absolute bottom-0 w-full bg-zinc-100 dark:bg-slate-700;
+}
+
+#hero {
+  @apply /* height:100vh; align-items:center; display:flex;
+    */ flex
+    h-screen
+    items-center justify-center;
+}
+
+.cardTailwind {
+  @apply transition duration-500;
+}
+
+
+* {
+  user-select: none;
+}
+
+.input_group {
+  @apply flex flex-col;
+}
+
+.label_for_input {
+  @apply mb-2 text-slate-300;
+}
+
+.input_form {
+  @apply rounded-md border-2 border-gray-300 p-1 caret-pink-400 outline-none transition duration-300 focus:border-pink-300;
+  caret-shape: underscore;
+}
+
+/* From uiverse.io by @lenin55 */
+.cl-toggle-switch {
+  position: relative;
+}
+
+.cl-switch {
+  position: relative;
+  display: inline-block;
+}
+/* Input */
+.cl-switch > input {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  z-index: -1;
+  position: absolute;
+  right: 6px;
+  top: -8px;
+  display: block;
+  margin: 0;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: rgb(0, 0, 0, 0.38);
+  outline: none;
+  opacity: 0;
+  transform: scale(1);
+  pointer-events: none;
+  transition: opacity 0.3s 0.1s, transform 0.2s 0.1s;
+}
+/* Track */
+.cl-switch > span::before {
+  content: "";
+  float: right;
+  display: inline-block;
+  margin: 5px 0 5px 10px;
+  border-radius: 7px;
+  width: 36px;
+  height: 14px;
+  @apply bg-zinc-300;
+  vertical-align: top;
+  transition: background-color 0.2s, opacity 0.2s;
+}
+/* Thumb */
+.cl-switch > span::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  right: 16px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  @apply bg-pink-400;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  transition: background-color 0.2s, transform 0.2s;
+}
+/* Checked */
+.cl-switch > input:checked {
+  right: -10px;
+  @apply bg-sky-800;
+}
+
+.cl-switch > input:checked + span::before {
+  @apply bg-sky-800;
+}
+
+.cl-switch > input:checked + span::after {
+  @apply bg-sky-200;
+  transform: translateX(16px);
+}
+/* Hover, Focus */
+.cl-switch:hover > input {
+  opacity: 0.04;
+}
+
+.cl-switch > input:focus {
+  opacity: 0.12;
+}
+
+.cl-switch:hover > input:focus {
+  opacity: 0.16;
+}
+/* Active */
+.cl-switch > input:active {
+  opacity: 1;
+  transform: scale(0);
+  transition: transform 0s, opacity 0s;
+}
+
+.cl-switch > input:active + span::before {
+  background-color: #8f8f8f;
+}
+
+.cl-switch > input:checked:active + span::before {
+  background-color: #85b8b7;
+}
+/* Disabled */
+.cl-switch > input:disabled {
+  opacity: 0;
+}
+
+.cl-switch > input:disabled + span::before {
+  background-color: #ddd;
+}
+
+.cl-switch > input:checked:disabled + span::before {
+  background-color: #bfdbda;
+}
+
+.cl-switch > input:checked:disabled + span::after {
+  background-color: #61b5b4;
+}
+
+.iconContainer {
+  @apply flex h-20 w-20 items-center justify-center rounded-full border border-transparent bg-pink-500 text-5xl text-zinc-50 shadow-lg transition duration-500 hover:bg-zinc-50 hover:text-pink-500;
+}
+
+.moreIconContainer {
+  @apply flex h-16 w-16 items-center  justify-center rounded-full bg-pink-500 text-4xl text-zinc-100 shadow-lg transition duration-500;
+}
+
+.fixed-navbar {
+  @apply fixed z-[99] bg-transparent bg-opacity-80 lg:dark:bg-slate-700;
+}
+
+#about ul li span.selector_ {
+  @apply dark:text-white;
+}
+
+#about ul li span.value_,
+#about .fade_element p {
+  @apply dark:text-neutral-300;
+}
+
+#about ul li i {
+  @apply dark:text-sky-300;
+}
+
+@media (min-width: 1024px) {
+  .fixed-navbar {
+    backdrop-filter: blur(5px);
+    box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
+    @apply bg-white;
+  }
+}
+
+#about .container {
+  @apply overflow-x-hidden;
+}
+
+.hamburger-line {
+  @apply my-2 block h-[2px] w-[30px] bg-pink-500 dark:bg-zinc-100;
+}
+
+.hamburger-active > span:nth-child(1) {
+  @apply rotate-45;
+}
+.hamburger-active > span:nth-child(2) {
+  @apply scale-0;
+}
+.hamburger-active > span:nth-child(3) {
+  @apply -rotate-45;
+}
+
+#services .cardTailwind h2 {
+  @apply dark:text-sky-100;
+}
+
+#services .cardTailwind p {
+  @apply dark:text-zinc-100;
+}

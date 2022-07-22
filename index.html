@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="./source/lightbox2-dev/dist/css/lightbox.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./source/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <link rel="shortcut icon" href="./source/img/japan_guy.gif" />
+    <link rel="stylesheet" href="./public/css/styling.css" />
+    <title>Portfolio &mdash; Fathin Abrar Athaullah</title>
+    <style>
+      .cardTailwind {
+        transform: translateY(0px);
+      }
+
+      .cardTailwind:hover {
+        transform: translateY(7px);
+      }
+    </style>
+    <script>
+      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+  </head>
+  <body>
+    <div id="container">
+      <!-- Header -->
+      <header
+        class="absolute top-0 left-0 z-10 flex w-full items-center bg-transparent transition duration-500"
+      >
+        <div class="container mx-auto">
+          <div class="relative flex items-center justify-center text-center">
+            <div class="flex items-center px-4 py-6 lg:py-0">
+              <button
+                id="hamburger"
+                name="hamburger"
+                type="button"
+                class="absolute right-4 block lg:hidden"
+              >
+                <span
+                  class="hamburger-line origin-top-left transition duration-500 ease-in-out"
+                ></span>
+                <span
+                  class="hamburger-line transition duration-500 ease-in-out"
+                ></span>
+                <span
+                  class="hamburger-line origin-bottom-left transition duration-500 ease-in-out"
+                ></span>
+              </button>
+
+              <nav
+                id="nav-menu"
+                class="absolute right-4 top-full hidden w-full max-w-[250px] rounded-lg bg-white py-5 font-semibold shadow-lg dark:bg-[#1a3752] lg:static lg:block lg:max-w-full lg:rounded-none lg:bg-transparent lg:shadow-none lg:dark:bg-transparent"
+              >
+                <ul class="block lg:flex">
+                  <li class="group">
+                    <a
+                      href="#hero"
+                      class="mx-8 flex py-2 text-base text-slate-800 transition duration-500 hover:text-pink-500 dark:text-sky-100 dark:hover:text-white"
+                      >Home</a
+                    >
+                  </li>
+                  <li class="group">
+                    <a
+                      href="#about"
+                      class="mx-8 flex py-2 text-base text-slate-800 transition duration-500 hover:text-pink-500 dark:text-sky-100 dark:hover:text-white"
+                      >About</a
+                    >
+                  </li>
+                  <li class="group">
+                    <a
+                      href="#portfolio"
+                      class="mx-8 flex py-2 text-base text-slate-800 transition duration-500 hover:text-pink-500 dark:text-sky-100 dark:hover:text-white"
+                      >Portfolio</a
+                    >
+                  </li>
+                  <li class="group">
+                    <a
+                      href="#services"
+                      class="mx-8 flex py-2 text-base text-slate-800 transition duration-500 hover:text-pink-500 dark:text-sky-100 dark:hover:text-white"
+                      >Services</a
+                    >
+                  </li>
+                  <li class="group">
+                    <a
+                      href="#contact"
+                      class="mx-8 flex py-2 text-base text-slate-800 transition duration-500 hover:text-pink-500 dark:text-sky-100 dark:hover:text-white"
+                      >Contact</a
+                    >
+                  </li>
+                  <li class="group">
+                    <a
+                      href="#more"
+                      class="mx-8 flex py-2 text-base text-slate-800 transition duration-500 hover:text-pink-500 dark:text-sky-100 dark:hover:text-white"
+                      >More</a
+                    >
+                  </li>
+                  <li class="group mt-2 dark:text-sky-100">
+                    <div class="mx-8 flex">
+                      <i class="bi bi-sun"></i>
+                      <div class="cl-toggle-switch">
+                        <label class="cl-switch">
+                          <input
+                            type="checkbox"
+                            class="check_dark cursor-pointer"
+                          />
+                          <span class="cursor-pointer"></span>
+                        </label>
+                      </div>
+                      <i i class="bi-moon bi pl-2"></i>
+                    </div>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- Header -->
+
+      <div id="body" class="pb-[34rem] lg:pb-80">
+        <!-- Hero -->
+        <section id="hero" class="bg-zinc-50 pt-36 pb-36 dark:bg-slate-800">
+          <div class="container mx-auto flex items-center justify-center">
+            <div class="hero-content w-full self-center px-4 lg:w-1/2">
+              <h1
+                class="font-semibold text-pink-500 dark:text-zinc-200 sm:text-2xl"
+              >
+                <span class="font-mono">My name is</span>
+                <span
+                  class="block text-4xl font-bold text-slate-600 dark:text-sky-100"
+                  >Fathin Abrar Athaullah</span
+                >
+              </h1>
+              <h2 class="mb-10 font-mono text-lg font-semibold text-slate-500">
+                <p class="dark:text-zinc-100">
+                  I'm
+                  <span class="typing text-pink-500 dark:text-sky-200"></span>
+                </p>
+              </h2>
+
+              <a
+                href="https://www.instagram.com/brofathin_"
+                class="mx-2 text-2xl font-semibold text-gray-500 transition duration-500 hover:text-pink-500 dark:text-zinc-200 dark:hover:text-sky-200"
+                target="_blank"
+                ><i class="bi bi-instagram"></i
+              ></a>
+              <a
+                href=""
+                class="mx-2 text-2xl font-semibold text-gray-500 transition duration-500 hover:text-pink-500 dark:text-zinc-200 dark:hover:text-sky-200"
+                target="_blank"
+                ><i class="bi bi-envelope"></i
+              ></a>
+              <a
+                href="https://stackoverflow.com/users/19598480/fathin-abrar-athaullah"
+                class="mx-2 text-2xl font-semibold text-gray-500 transition duration-500 hover:text-pink-500 dark:text-zinc-200 dark:hover:text-sky-200"
+                target="_blank"
+                ><i class="bi bi-stack-overflow"></i
+              ></a>
+              <a
+                href="https://github.com/codebetterthanyesterday"
+                class="mx-2 text-2xl font-semibold text-gray-500 transition duration-500 hover:text-pink-500 dark:text-zinc-200 dark:hover:text-sky-200"
+                target="_blank"
+                ><i class="bi bi-github"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/in/fathin-f-448022232/"
+                class="mx-2 text-2xl font-semibold text-gray-500 transition duration-500 hover:text-pink-500 dark:text-zinc-200 dark:hover:text-sky-200"
+                target="_blank"
+                ><i class="bi bi-linkedin"></i
+              ></a>
+            </div>
+          </div>
+        </section>
+        <!-- Hero -->
+        <!-- About Section -->
+        <section id="about" class="pt-36 pb-36 dark:bg-slate-700">
+          <div class="container_animation container overflow-hidden">
+            <div class="flex flex-wrap">
+              <div class="fade_fade w-full px-4 lg:w-1/2">
+                <h4
+                  class="mb-10 text-center font-bold uppercase text-pink-500 dark:text-sky-100 lg:text-2xl"
+                >
+                  About me
+                </h4>
+                <div class="flex justify-center">
+                  <a
+                    href="./source/img/IMG_20220721_181420.jpg"
+                    class="flex justify-center"
+                    data-lightbox="abrar"
+                  >
+                    <img
+                      src="./source/img/IMG_20220721_181420.jpg"
+                      id="lightgallery"
+                      class="saya_ image-link imgClickable w-[90%] rounded-full border-[3px] shadow-lg lg:w-[60%]"
+                      alt=""
+                    />
+                  </a>
+                </div>
+              </div>
+              <div class="fade_element w-full px-4 text-base lg:w-1/2">
+                <div class="mt-10 lg:pt-10">
+                  <ul class="mb-2">
+                    <li class="my-4">
+                      <i class="bi-chevron-right bi text-pink-500"></i>
+                      <span class="selector_ mr-1 font-semibold text-slate-900"
+                        >Full Name:</span
+                      >
+                      <a
+                        href="https://www.instagram.com/brofathin_"
+                        target="_blank"
+                        ><span class="value_ font-medium text-slate-500"
+                          >Fathin Abrar Athaullah</span
+                        ></a
+                      >
+                    </li>
+                    <li class="my-4">
+                      <i class="bi-chevron-right bi text-pink-500"></i>
+                      <span class="selector_ mr-1 font-semibold text-slate-900"
+                        >Birthday:</span
+                      >
+                      <span class="value_ font-medium text-slate-500"
+                        >13 November 2005</span
+                      >
+                    </li>
+                    <li class="my-4">
+                      <i class="bi-chevron-right bi text-pink-500"></i>
+                      <span class="selector_ mr-1 font-semibold text-slate-900"
+                        >Age:</span
+                      >
+                      <span
+                        class="value_ ageIncrement font-medium text-slate-500"
+                      ></span>
+                    </li>
+                    <li class="my-4">
+                      <i class="bi-chevron-right bi text-pink-500"></i>
+                      <span class="selector_ mr-1 font-semibold text-slate-900"
+                        >Mail:</span
+                      >
+                      <a href="mailto:fathinabrar.a@gmail.com"
+                        ><span class="value_ font-medium text-slate-500"
+                          >fathinabrar.a@gmail.com</span
+                        ></a
+                      >
+                    </li>
+                    <li class="my-4">
+                      <i class="bi-chevron-right bi text-pink-500"></i>
+                      <span class="selector_ mr-1 font-semibold text-slate-900"
+                        >Phone number:</span
+                      >
+                      <a href="tel:+6282249029218"
+                        ><span class="value_ font-medium text-slate-500"
+                          >+6282249029218</span
+                        ></a
+                      >
+                    </li>
+                    <li class="my-4">
+                      <i class="bi-chevron-right bi text-pink-500"></i>
+                      <span class="selector_ mr-1 font-semibold text-slate-900"
+                        >City:</span
+                      >
+                      <span class="value_ font-medium text-slate-500"
+                        >Bogor, Indonesia</span
+                      >
+                    </li>
+                    <li class="my-4">
+                      <i class="bi-chevron-right bi text-pink-500"></i>
+                      <span class="selector_ mr-1 font-semibold text-slate-900"
+                        >Freelance:</span
+                      >
+                      <span class="value_ font-medium text-slate-500"
+                        >Available</span
+                      >
+                    </li>
+                  </ul>
+                  <p class="font-medium text-slate-700">
+                    A tech enthusiast who's interested in creating a Computer
+                    program, Software engineer, Web development, Artificial
+                    intelligence.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- About Section -->
+
+        <!-- Porfolio -->
+        <section id="portfolio" class="bg-zinc-100 py-36 dark:bg-slate-800">
+          <div class="container_animation container">
+            <div class="w-full px-4">
+              <div class="mx-auto mb-16 max-w-xl text-center">
+                <h4
+                  class="text-lg font-semibold text-pink-600 dark:text-zinc-100"
+                >
+                  Portfolio
+                </h4>
+                <h2 class="text-dark mb-4 text-3xl font-bold dark:text-sky-200">
+                  Recent Projects
+                </h2>
+              </div>
+            </div>
+            <div
+              class="parent_O flex w-full flex-wrap justify-center px-4 xl:mx-auto xl:w-10/12"
+            >
+              <div class="p-4 md:w-1/2">
+                <div
+                  class="relative overflow-hidden rounded-md shadow-md dark:shadow-lg dark:shadow-gray-900"
+                >
+                  <a
+                    href="./source/img/Screenshot 2022-07-15 100216.png"
+                    data-title="My own calculator programmed in visual basic."
+                    data-lightbox="project_"
+                  >
+                    <img
+                      src="./source/img/Screenshot 2022-07-15 100216.png"
+                      alt=""
+                      width="w-full"
+                      class="imagePort imgClickable transition duration-500 ease-in-out hover:brightness-[70%]"
+                    />
+                  </a>
+                </div>
+              </div>
+              <div class="p-4 md:w-1/2">
+                <div
+                  class="relative overflow-hidden rounded-md shadow-md dark:shadow-lg dark:shadow-gray-900"
+                >
+                  <a
+                    href="./source/img/Screenshot 2022-07-21 155014.png"
+                    data-title="Calculator #2."
+                    data-lightbox="project_"
+                  >
+                    <img
+                      src="./source/img/Screenshot 2022-07-21 155014.png"
+                      alt=""
+                      width="w-full"
+                      class="imagePort imgClickable transition duration-500 ease-in-out hover:brightness-[70%]"
+                    />
+                  </a>
+                </div>
+              </div>
+              <div class="p-4 md:w-1/2">
+                <div
+                  class="relative overflow-hidden rounded-md shadow-md dark:shadow-lg dark:shadow-gray-900"
+                >
+                  <a
+                    data-title="Database application programmed in PHP."
+                    data-lightbox="project_"
+                    href="./source/img/Screenshot 2022-07-21 154830.png"
+                  >
+                    <img
+                      src="./source/img/Screenshot 2022-07-21 154830.png"
+                      alt=""
+                      width="w-full"
+                      class="imagePort imgClickable transition duration-500 ease-in-out hover:brightness-[70%]"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Portfolio -->
+
+        <!-- Services -->
+        <section id="services" class="bg-white py-36 dark:bg-slate-700">
+          <div class="container_animation container">
+            <div class="w-full px-4">
+              <div class="mx-auto mb-16 max-w-xl text-center">
+                <h4
+                  class="text-3xl font-semibold text-pink-600 dark:text-sky-200"
+                >
+                  Services
+                </h4>
+                <h2 class="text-dark 0 mb-4 text-3xl font-bold"></h2>
+              </div>
+            </div>
+            <div
+              class="flex w-full flex-wrap justify-center px-4 xl:mx-auto xl:w-10/12"
+            >
+              <div class="slideUp_1 w-full p-3 sm:w-1/2 lg:w-1/3">
+                <div
+                  class="overflow-hidden rounded-md shadow-lg dark:shadow-slate-800"
+                >
+                  <div
+                    class="cardTailwind flex flex-col items-center justify-center rounded-lg border bg-white p-6 text-center shadow-md hover:bg-zinc-50 dark:border-gray-700 dark:bg-slate-900 dark:shadow-slate-800"
+                  >
+                    <div
+                      class="iconContainer dark:bg-slate-800 dark:text-sky-200 dark:hover:bg-sky-200 dark:hover:text-slate-800"
+                    >
+                      <i class="bi bi-person-workspace"></i>
+                    </div>
+
+                    <div class="mt-5">
+                      <h2 class="mb-2 text-2xl font-semibold text-gray-500">
+                        IT specialist
+                      </h2>
+                      <p class="text-gray-500"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slideUp_2 w-full p-3 sm:w-1/2 lg:w-1/3">
+                <div
+                  class="overflow-hidden rounded-md shadow-lg dark:shadow-slate-800"
+                >
+                  <div
+                    class="cardTailwind flex flex-col items-center justify-center rounded-lg border bg-white p-6 text-center shadow-md hover:bg-zinc-50 dark:border-gray-700 dark:bg-slate-900 dark:shadow-slate-800"
+                  >
+                    <div
+                      class="iconContainer dark:bg-slate-800 dark:text-sky-200 dark:hover:bg-sky-200 dark:hover:text-slate-800"
+                    >
+                      <i class="bi bi-globe"></i>
+                    </div>
+
+                    <div class="mt-5">
+                      <h2 class="mb-2 text-2xl font-semibold text-gray-500">
+                        Web Development
+                      </h2>
+                      <p class="text-gray-500"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slideUp_3 w-full p-3 sm:w-1/2 lg:w-1/3">
+                <div
+                  class="overflow-hidden rounded-md shadow-lg dark:shadow-slate-800"
+                >
+                  <div
+                    class="cardTailwind flex flex-col items-center justify-center rounded-lg border bg-white p-6 text-center shadow-md hover:bg-zinc-50 dark:border-gray-700 dark:bg-slate-900 dark:shadow-slate-800"
+                  >
+                    <div
+                      class="iconContainer dark:bg-slate-800 dark:text-sky-200 dark:hover:bg-sky-200 dark:hover:text-slate-800"
+                    >
+                      <i class="bi bi-grid-fill"></i>
+                    </div>
+
+                    <div class="mt-5">
+                      <h2 class="mb-2 text-2xl font-semibold text-gray-500">
+                        Software Development
+                      </h2>
+                      <p class="text-gray-500"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slideUp_1 mb-4 w-full p-3 sm:w-1/2 lg:w-1/3">
+                <div
+                  class="overflow-hidden rounded-md shadow-lg dark:shadow-slate-800"
+                >
+                  <div
+                    class="cardTailwind flex flex-col items-center justify-center rounded-lg border bg-white p-6 text-center shadow-md hover:bg-zinc-50 dark:border-gray-700 dark:bg-slate-900 dark:shadow-slate-800"
+                  >
+                    <div
+                      class="iconContainer dark:bg-slate-800 dark:text-sky-200 dark:hover:bg-sky-200 dark:hover:text-slate-800"
+                    >
+                      <i class="bi bi-controller"></i>
+                    </div>
+
+                    <div class="mt-5">
+                      <h2 class="mb-2 text-2xl font-semibold text-gray-500">
+                        Game Development
+                      </h2>
+                      <p class="text-gray-500"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slideUp_2 mb-4 w-full p-3 sm:w-1/2 lg:w-1/3">
+                <div
+                  class="overflow-hidden rounded-md shadow-lg dark:shadow-slate-800"
+                >
+                  <div
+                    class="cardTailwind flex flex-col items-center justify-center rounded-lg border bg-white p-6 text-center shadow-md hover:bg-zinc-50 dark:border-gray-700 dark:bg-slate-900 dark:shadow-slate-800"
+                  >
+                    <div
+                      class="iconContainer dark:bg-slate-800 dark:text-sky-200 dark:hover:bg-sky-200 dark:hover:text-slate-800"
+                    >
+                      <i class="bi bi-server"></i>
+                    </div>
+
+                    <div class="mt-5">
+                      <h2 class="mb-2 text-2xl font-semibold text-gray-500">
+                        Data Science
+                      </h2>
+                      <p class="text-gray-500"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slideUp_3 mb-4 w-full p-3 sm:w-1/2 lg:w-1/3">
+                <div
+                  class="overflow-hidden rounded-md shadow-lg dark:shadow-slate-800"
+                >
+                  <div
+                    class="cardTailwind flex flex-col items-center justify-center rounded-lg border bg-white p-6 text-center shadow-md hover:bg-zinc-50 dark:border-gray-700 dark:bg-slate-900 dark:shadow-slate-800"
+                  >
+                    <div
+                      class="iconContainer dark:bg-slate-800 dark:text-sky-200 dark:hover:bg-sky-200 dark:hover:text-slate-800"
+                    >
+                      <i class="bi bi-wifi"></i>
+                    </div>
+
+                    <div class="mt-5">
+                      <h2 class="mb-2 text-2xl font-semibold text-gray-500">
+                        Internet of Things
+                      </h2>
+                      <p class="text-gray-500"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Services -->
+
+        <!-- Contact -->
+        <section id="contact" class="bg-no-repeat py-36">
+          <form method="POST" action="https://formsubmit.co/jinlielue@gmail.com" name="contactForm">
+            <div
+              class="container_animation flex items-center justify-center sm:container"
+            >
+              <div class="wrapper_ py-6 sm:rounded-xl">
+                <div class="w-full px-4">
+                  <div class="mx-auto mb-16 max-w-xl text-center">
+                    <h4
+                      class="mb-4 text-3xl font-semibold text-pink-600 dark:text-sky-200"
+                    >
+                      Contact me
+                    </h4>
+                    <p class="font-medium text-zinc-50">
+                      Need a service? please submit the form below!
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="flex w-full flex-wrap justify-center px-4 xl:mx-auto xl:w-10/12"
+                >
+                  <div class="slideUp_1 mb-2 w-full p-3 md:w-1/2">
+                    <div class="input_group">
+                      <label class="label_for_input">First Name</label>
+                      <input
+                        required
+                        type="text"
+                        class="input_form dark:border-slate-800 dark:bg-slate-700 dark:caret-slate-800 dark:focus:border-2 dark:focus:border-slate-900"
+                        name="first-name"
+                      />
+                    </div>
+                  </div>
+                  <div class="slideUp_1 mb-2 w-full p-3 md:w-1/2">
+                    <div class="input_group">
+                      <label class="label_for_input">Last Name</label>
+                      <input
+                        required
+                        type="text"
+                        class="input_form dark:border-slate-800 dark:bg-slate-700 dark:caret-slate-800 dark:focus:border-2 dark:focus:border-slate-900"
+                        name="last-name"
+                      />
+                    </div>
+                  </div>
+                  <div class="slideUp_1 mb-2 w-full p-3 md:w-3/4">
+                    <div class="input_group">
+                      <label class="label_for_input">E-mail address</label>
+                      <input
+                        required
+                        id="email"
+                        type="email"
+                        name="email-address"
+                        class="input_form dark:border-slate-800 dark:bg-slate-700 dark:caret-slate-800 dark:focus:border-2 dark:focus:border-slate-900"
+                      />
+                      <input type="hidden" name="_template" value="table">
+                      <input type="hidden" name="_captcha" value="false">
+                      <input type="hidden" name="_subject" value="Pesan baru!">
+                    </div>
+                  </div>
+                  <div class="w-full md:w-1/4"></div>
+                  <div class="slideUp_1 mb-2 w-full p-3">
+                    <div class="input_group">
+                      <label class="label_for_input">Message</label>
+                      <textarea
+                        required
+                        class="input_form dark:border-slate-800 dark:bg-slate-700 dark:caret-slate-800 dark:focus:border-2 dark:focus:border-slate-900"
+                        name="message"
+                        rows="5"
+                      ></textarea>
+                    </div>
+                  </div>
+                  <button
+                    type="submit"
+                    class="rounded-full bg-pink-500 py-2 px-8 text-white transition duration-300 hover:shadow-md dark:bg-slate-900">Send</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </section>
+        <!-- Contact -->
+
+        <!-- more -->
+        <section id="more" class="bg-white py-36 dark:bg-slate-800">
+          <div class="container_animation container">
+            <div class="w-full px-4">
+              <div class="mx-auto mb-16 max-w-xl text-center">
+                <h4
+                  class="text-3xl font-semibold text-pink-600 dark:text-sky-200"
+                >
+                  More
+                </h4>
+                <h2 class="text-dark mb-4 text-3xl font-bold"></h2>
+                <p
+                  class="text-md font-medium text-slate-500 dark:text-gray-300/80"
+                >
+                  Contact via application below!
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex w-full flex-wrap justify-center px-4 xl:mx-auto xl:w-10/12"
+            >
+              <div class="slideUp_1 mb-4 w-full p-3 sm:w-1/2 lg:w-1/3">
+                <div
+                  class="overflow-hidden rounded-md shadow-lg dark:shadow-lg dark:shadow-gray-900"
+                >
+                  <a
+                    href="https://wa.me/+6282249029218"
+                    target="_blank"
+                    class="cardTailwind flex flex-col items-center justify-center rounded-lg border border-gray-200 bg-white p-6 text-center shadow-md hover:bg-zinc-50 dark:border-gray-800 dark:bg-slate-900"
+                  >
+                    <div
+                      class="moreIconContainer dark:bg-slate-800 dark:text-sky-200"
+                    >
+                      <i class="bi bi-whatsapp"></i>
+                    </div>
+
+                    <div class="mt-5">
+                      <h2
+                        class="mb-2 text-2xl font-semibold text-gray-500 dark:text-sky-200"
+                      >
+                        WhatsApp
+                      </h2>
+                      <p class="text-gray-500 dark:text-gray-300/80"></p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="slideUp_2 mb-4 w-full p-3 sm:w-1/2 lg:w-1/3">
+                <div
+                  class="overflow-hidden rounded-md shadow-lg dark:shadow-lg dark:shadow-gray-900"
+                >
+                  <a
+                    href="mailto:fathinabrar.a@gmail.com"
+                    target="_blank"
+                    class="cardTailwind flex flex-col items-center justify-center rounded-lg border border-gray-200 bg-white p-6 text-center shadow-md hover:bg-zinc-50 dark:border-gray-800 dark:bg-slate-900"
+                  >
+                    <div
+                      class="moreIconContainer dark:bg-slate-800 dark:text-sky-200"
+                    >
+                      <i class="bi bi-envelope"></i>
+                    </div>
+
+                    <div class="mt-5">
+                      <h2
+                        class="mb-2 text-2xl font-semibold text-gray-500 dark:text-sky-200"
+                      >
+                        G-mail
+                      </h2>
+                      <p class="text-gray-500 dark:text-gray-300/80"></p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="slideUp_3 mb-4 w-full p-3 sm:w-1/2 lg:w-1/3">
+                <div
+                  class="overflow-hidden rounded-md shadow-lg dark:shadow-lg dark:shadow-gray-900"
+                >
+                  <a
+                    href="https://www.instagram.com/brofathin_/"
+                    target="_blank"
+                    class="cardTailwind flex flex-col items-center justify-center rounded-lg border border-gray-200 bg-white p-6 text-center shadow-md hover:bg-zinc-50 dark:border-gray-800 dark:bg-slate-900"
+                  >
+                    <div
+                      class="moreIconContainer instagramContainer dark:bg-slate-800 dark:text-sky-200"
+                    >
+                      <i class="bi bi-instagram"></i>
+                    </div>
+
+                    <div class="mt-5">
+                      <h2
+                        class="mb-2 text-2xl font-semibold text-gray-500 dark:text-sky-200"
+                      >
+                        Instagram DM
+                      </h2>
+                      <p class="text-gray-500 dark:text-gray-300/80"></p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- more -->
+      </div>
+
+      <!-- footer -->
+      <footer id="footer" class="dark:bg-slate-700">
+        <div class="container">
+          <div class="flex w-full flex-wrap px-4 py-8">
+            <div class="w-full p-3 lg:w-1/3">
+              <h1
+                class="mb-3 text-3xl font-bold text-pink-600 dark:text-sky-200"
+              >
+                FathinAbrar
+              </h1>
+              <p class="dark:text-gray-300/80">
+                a tech enthusiast who programs applications, websites, and more.
+              </p>
+              <p></p>
+            </div>
+            <div class="w-full p-3 lg:w-1/3">
+              <h1
+                class="mb-3 text-2xl font-semibold text-slate-900 dark:text-sky-200"
+              >
+                Links
+              </h1>
+              <ul
+                class="text-base font-medium text-slate-800 dark:text-gray-300/80"
+              >
+                <li>
+                  <span
+                    class="bi bi-chevron-right text-pink-600 dark:text-sky-300"
+                  ></span>
+                  <a href="#hero">Home</a>
+                </li>
+                <li>
+                  <span
+                    class="bi bi-chevron-right text-pink-600 dark:text-sky-300"
+                  ></span>
+                  <a href="#about">About</a>
+                </li>
+                <li>
+                  <span
+                    class="bi bi-chevron-right text-pink-600 dark:text-sky-300"
+                  ></span>
+                  <a href="#portfolio">Portfolio</a>
+                </li>
+                <li>
+                  <span
+                    class="bi bi-chevron-right text-pink-600 dark:text-sky-300"
+                  ></span>
+                  <a href="#services">Services</a>
+                </li>
+                <li>
+                  <span
+                    class="bi bi-chevron-right text-pink-600 dark:text-sky-300"
+                  ></span>
+                  <a href="#contact">Contact</a>
+                </li>
+                <li>
+                  <span
+                    class="bi bi-chevron-right text-pink-600 dark:text-sky-300"
+                  ></span>
+                  <a href="#more">More</a>
+                </li>
+              </ul>
+            </div>
+            <div class="w-full p-3 lg:w-1/3">
+              <h1
+                class="mb-3 text-2xl font-semibold text-slate-900 dark:text-sky-200"
+              >
+                Social Networks
+              </h1>
+              <ul
+                class="text-base font-medium text-slate-800 dark:text-gray-300/80"
+              >
+                <li>
+                  <span
+                    class="bi bi-chevron-right text-pink-600 dark:text-sky-300"
+                  ></span>
+                  <a href="https://instagram.com/brofathin_" target="_blank"
+                    >Instagram</a
+                  >
+                </li>
+                <li>
+                  <span
+                    class="bi bi-chevron-right text-pink-600 dark:text-sky-300"
+                  ></span>
+                  <a
+                    href="https://github.com/codebetterthanyesterday"
+                    target="_blank"
+                    >GitHub</a
+                  >
+                </li>
+                <li>
+                  <span
+                    class="bi bi-chevron-right text-pink-600 dark:text-sky-300"
+                  ></span>
+                  <a
+                    href="https://stackoverflow.com/users/19598480/fathin-abrar-athaullah"
+                    target="_blank"
+                    >Stackoverflow</a
+                  >
+                </li>
+                <li>
+                  <span
+                    class="bi bi-chevron-right text-pink-600 dark:text-sky-300"
+                  ></span>
+                  <a
+                    href="https://www.linkedin.com/in/fathin-f-448022232/"
+                    target="_blank"
+                    >LinkedIn</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div
+          class="copyright flex items-center justify-center border-t-2 bg-zinc-200 py-3 text-center font-medium text-slate-800 dark:border-t dark:border-t-slate-600 dark:bg-slate-800"
+        >
+          <div class="container">
+            <span class="dark:text-gray-300/50"
+              >&copy;
+              <script>
+                document.write(new Date().getFullYear());
+              </script></span
+            >
+            <span class="font-semibold text-slate-900 dark:text-gray-300/70"
+              ><a href="https://www.instagram.com/brofathin_/" target="_blank"
+                >Fathin Abrar Athaullah</a
+              ></span
+            >
+            <span class="dark:text-gray-300/50">&mdash; My Portfolio</span>
+          </div>
+        </div>
+      </footer>
+      <!-- footer -->
+
+      <!-- Back to top -->
+      <button
+        class="back_top fixed bottom-4 right-4 z-[999] flex h-12 w-12 items-center justify-center rounded-full bg-pink-600 text-2xl text-white shadow-md transition hover:bg-pink-500 hover:shadow-md dark:bg-sky-900"
+      >
+        <span class="bi bi-arrow-up"></span>
+      </button>
+      <!-- Back to top -->
+    </div>
+    <!-- <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+      function sendEmail() {
+        Email.send({
+          SecureToken: "c34b27cd-ffd6-4930-bc35-946587f37e08",
+          To: "fathinabrar.a@gmail.com",
+          From: document.getElementById("email").value,
+          Subject: "New submission",
+          Body: "And this is the body",
+        }).then((message) => alert(message));
+      }
+    </script> -->
+    <script src="./source/lightbox2-dev/dist/js/lightbox-plus-jquery.min.js"></script>
+    <script src="./source/scrollreveal-master/dist/scrollreveal.min.js"></script>
+    <script src="./source/package/dist/sweetalert2.all.min.js"></script>
+    <script src="./source/tilt/tilt.js-master/dest/tilt.jquery.js"></script>
+    <script src="./source/javascript/typed.js-master/lib/typed.min.js"></script>
+    <script src="./source/javascript/jquery-3.6.0.min.js"></script>
+    <script src="./source/javascript/tilt.jquery.min.js"></script>
+    <script src="./source/javascript/js.js"></script>
+  </body>
+</html>
