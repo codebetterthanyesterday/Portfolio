@@ -137,12 +137,12 @@ var typed = new Typed(".typing", {
     return age;
 }
 
-var tanggalLahir = "2005-10-15";
+var tanggalLahir = "2005-10-12";
 var umur = hitungUmur(tanggalLahir);
 document.querySelector(".ageIncrement").innerText = umur;
 
 window.onload = function() {
-    var tanggalLahir = "2005-10-15"; // Ganti dengan tanggal lahir pengguna
+    var tanggalLahir = "2005-10-12";
     var umur = hitungUmur(tanggalLahir);
     document.querySelector(".ageIncrement").innerText = umur;
 }
