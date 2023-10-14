@@ -131,17 +131,15 @@ var typed = new Typed(".typing", {
     var birthDate = new Date(tanggalLahir);
     var age = today.getFullYear() - birthDate.getFullYear();
     var m = today.getMonth() - birthDate.getMonth();
-    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-    }
     return age;
 }
 
-var tanggalLahir = "2005-10-13";
+var tanggalLahir = "2005-10-15";
 var umur = hitungUmur(tanggalLahir);
 document.querySelector(".ageIncrement").innerText = umur;
 
 window.onload = function() {
-    var tanggalLahir = "2005-10-13"; // Ganti dengan tanggal lahir pengguna
+    var tanggalLahir = "2005-10-15"; // Ganti dengan tanggal lahir pengguna
     var umur = hitungUmur(tanggalLahir);
     document.querySelector(".ageIncrement").innerText = umur;
 }
