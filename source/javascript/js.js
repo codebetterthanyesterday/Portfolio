@@ -125,19 +125,27 @@ var typed = new Typed(".typing", {
     darkMode.checked = false;
   }
   
-  // Age increment
-  var muatElement = document.querySelector('.ageIncrement');
-  var umurSayaSkrg = 16;
-  var hariIni = new Date();
-  var tanggal = String(hariIni.getDate()).padStart(2, "0");
-  var bulan = String(hariIni.getMonth() + 1).padStart(2, "0");
-  hariIni = bulan + "/" + tanggal;
-  if (hariIni == "11/13") {
-    umurSayaNtar = umurSayaSkrg + 1;
-    muatElement.innerHTML = umurSayaNtar;
-  } else {
-    muatElement.innerHTML = umurSayaSkrg;
-  }
+  // Age increment ageIncrement
+  function hitungUmur(tanggalLahir) {
+    var today = new Date();
+    var birthDate = new Date(tanggalLahir);
+    var age = today.getFullYear() - birthDate.getFullYear();
+    var m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+    return age;
+}
+
+var tanggalLahir = "2005-11-13";
+var umur = hitungUmur(tanggalLahir);
+document.querySelector(".ageIncrement").innerText = umur;
+
+window.onload = function() {
+    var tanggalLahir = "2005-11-13"; // Ganti dengan tanggal lahir pengguna
+    var umur = hitungUmur(tanggalLahir);
+    document.querySelector(".ageIncrement").innerText = umur;
+}
   
   // tilt
   ( function( $ ) {
